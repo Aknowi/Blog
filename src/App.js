@@ -9,11 +9,14 @@ import { NotFound } from "./pages/NotFound";
 import { ToastContainer } from "react-toastify";
 import { Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
+import { useState } from "react";
 
 function App() {
+  const [active, setActive] = useState("home");
+
   return (
     <div className="App">
-      <Header />
+      <Header active={active} setActive={setActive} />
       <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
